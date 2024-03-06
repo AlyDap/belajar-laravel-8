@@ -2,15 +2,16 @@
 @section('container')
     
 <h1>Halaman Blog Posts</h1>
+<br>
 
 @foreach ($posts as $item)    
 
-<article class="mb-5">
+{{-- <article class="mb-5"> --}}
  <h2>
-  <a href="/posts/{{ $item->id }}">{{ $item->title }}</a>
+  <a href="/posts/{{ $item->slug }}">{{ $item->title }}</a>
  </h2> 
  <p>{{ $item->excerpt }}</p>
-</article>
+{{-- </article> --}}
  
 @endforeach
 
