@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\PostController;
 use App\Models\Category;
 use App\Models\Post;
@@ -50,3 +51,6 @@ Route::get('/categories', function (Category $category) {
   'categories' => Category::all(),
  ]);
 });
+
+Route::get('downloads', [DownloadController::class, 'index']);
+Route::get('download/{id}', [DownloadController::class, 'downloadPDF'])->name('download.pdf');
